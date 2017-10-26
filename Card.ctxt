@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Card
+comment0.text=\n\ Write\ a\ description\ of\ class\ Card\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=suit\ rank\ points
+comment1.target=Card(java.lang.String,\ java.lang.String,\ int)
+comment2.params=
+comment2.target=java.lang.String\ seeRank()
+comment3.params=
+comment3.target=java.lang.String\ seeSuit()
+comment4.params=
+comment4.target=int\ points()
+comment5.params=card2
+comment5.target=java.lang.Boolean\ matches(Card)
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7
