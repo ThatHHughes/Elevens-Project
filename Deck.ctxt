@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=int\ size()
 comment4.params=
 comment4.target=Card\ deal()
-numComments=5
+comment5.params=
+comment5.target=void\ shuffle()
+numComments=6
