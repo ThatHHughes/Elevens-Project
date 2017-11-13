@@ -18,8 +18,10 @@ public class Deck
         this.cards = new ArrayList<Card>(); 
         
         for (int i = 0; i < values.length; i++) {
-            Card aCard = new Card(ranks[i], suits[i], values[i]); 
-            this.cards.add(aCard); 
+            
+            for (String suitString : suits) {
+				cards.add(new Card(ranks[i], suitString, values[i]));
+	    }
         }
         
         this.size = this.cards.size();
@@ -39,7 +41,7 @@ public class Deck
     }
     
     public int size () {
-        return this.cards.size(); 
+        return this.size; 
     }
     
     public Card deal () {
@@ -51,6 +53,36 @@ public class Deck
             return null; 
         }
     }
+    
+    public String toString() {
+		String rtn = "size = " + size + "\nUndealt cards: \n";
+
+		for (int k = size - 1; k >= 0; k--) {
+			rtn = rtn + cards.get(k);
+			if (k != 0) {
+				rtn = rtn + ", ";
+			}
+			if ((size - k) % 2 == 0) {
+				// Insert carriage returns so entire deck is visible on console.
+				rtn = rtn + "\n";
+			}
+		}
+
+		rtn = rtn + "\nDealt cards: \n";
+		for (int k = cards.size() - 1; k >= size; k--) {
+			rtn = rtn + cards.get(k);
+			if (k != size) {
+				rtn = rtn + ", ";
+			}
+			if ((k - cards.size()) % 2 == 0) {
+				// Insert carriage returns so entire deck is visible on console.
+				rtn = rtn + "\n";
+			}
+		}
+
+		rtn = rtn + "\n";
+		return rtn;
+	}
     
     public void shuffle () {
         for( int k = size - 1; k >= 0; k-- ) {
